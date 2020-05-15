@@ -8,7 +8,7 @@
  */
 int main(int ac, char **av)
 {
-	char *buffer = NULL; 
+	char *buffer = NULL;
 	size_t buffsize;
 	FILE *fd;
 	int n, i = 0;
@@ -24,7 +24,7 @@ int main(int ac, char **av)
 		fprintf(stderr, "Error: Can't open file %s", av[1]);
 		exit(EXIT_FAILURE);
 	}
-	while((n = getline(&buffer, &buffsize, fd)) != -1)
+	while ((n = getline(&buffer, &buffsize, fd)) != -1)
 	{
 		command(buffer, n);
 		i++;
@@ -38,6 +38,7 @@ int main(int ac, char **av)
 /**
  * command - function to tokenize buffer
  * @buffer: line to be tokenized
+ * @word_counter: number of characters
  * Return: array with every word
  */
 char **command(char *buffer, int word_counter)
